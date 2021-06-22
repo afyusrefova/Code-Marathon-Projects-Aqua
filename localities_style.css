@@ -1,0 +1,16 @@
+body {
+   background-image: linear-gradient(to bottom right, #ccffff,#f2f2f2);
+}
+
+#ropotamo {
+  border-radius: 25px;
+  background-position: left top;
+  padding: 20px;
+  width: 96%;
+  height: 25%;
+  border: solid;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, #00ffff, #e6ffff);
+  background-size: 100%;
+  box-shadow: 4px 15px 25px 4px rgba(0,0,0,0.2);
+}
