@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-
 <html>
 
-<head>
-<title>Начало</title>
-</head>
+    <head>
+        <title>Начало</title>
+    </head>
 
-<body>
+    <body>
 
-<!--Connection to the css of this document-->
-<link rel="stylesheet" type="text/css" href="style/nav_style.css">
-<link rel="stylesheet" type="text/css" href="style/index_style.css">
-
-
-<!--Font on the tabs-->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
-
-<!--Dropdown Menu-->
-<nav class = "borders">
-<div class="dropdown">
-  <button class="dropbtn">Начало</button>
-  <div class="dropdown-content">
-    <a href="index.html">Назад</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">Водни местности и животни</button>
-  <div class="dropdown-content">
-    <a href="html/localities.html">Местности</a>
-    <a href="#">Животни</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">Всичко за животните</button>
-  <div class="dropdown-content">
-    <a href="#">Наблюдение</a>
-    <a href="#">Опазване</a>
-    <a href="#">Изследване</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">Контакти</button>
-  <div class="dropdown-content">
-    <a href="html/contact.html">Свържи се с нас</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">Регистрация</button>
-  <div class="dropdown-content">
-    <a href="html/form.html">Форма</a>
-  </div>
-</div>
-</nav>
+        <!--Connection to the css of this document-->
+        <link rel="stylesheet" type="text/css" href="style/nav_style.css">
+        <link rel="stylesheet" type="text/css" href="style/index_style.css">
 
 
-</body>
+        <!--Font on the tabs-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+
+        <!--Menu-->
+        <nav>
+
+            <a href="index.html"><img id="logo" src="images/logo.png" alt="logo"></a>
+
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbox">
+                <p id="on">&#9776;</p> <p id="off">&#9747;</p>
+            </label>
+
+            <div class="nav_links">
+
+                <ul>
+
+                    <li class="act"><a class="active" href="index.html">Начало</a></li>
+                    <li><a class="inactive" href="#">Водни местности</a></li>
+                    <li class="dropdown">
+
+                        <a class="inactive" href="#">Застрашени животни  &#9660;</a>
+
+                        <div class="dropdown-content">
+
+                            <a href="#">Видове</a>
+                            <a href="#">Наблюдения</a>
+                            <a href="#">Опазване</a>
+
+                        </div>
+
+                    </li>
+                    <li><a class="inactive" href="#">Контакти</a></li>
+                    <li><a class="inactive" href="#">Регистрация</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </body>
 
 </html>
