@@ -1,6 +1,6 @@
 # Code-Marathon-Projects-Aqua
 
-❓Who are we?
+## ❓Who are we?
 
 Our team is composed of six students from Vocational School for computer programming and innovation.
 
