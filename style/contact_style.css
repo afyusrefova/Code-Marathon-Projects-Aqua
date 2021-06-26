@@ -2,8 +2,6 @@ body {
   background-image: linear-gradient(#99bbff, #b3ffff, #99ffbb);
 }
 
-
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -42,36 +40,36 @@ button:hover, a:hover {
 /*Place of the cards*/
 #afra{
   text-align: center;
-  margin-top: 2%;
-  margin-left: 2%;
+  margin-top: 10px;
+  margin-left: 25px;
 }
 
 #kristina {
   text-align: center;
-  margin-top: -45%;
-  margin-left: 35%;
+  margin-top: -565px;
+  margin-left: 450px;
 }
 
 #sindi {
   text-align: center;
-  margin-top: -45%;
-  margin-left: 70%;
+  margin-top: -565px;
+  margin-left: 885px;
 }
 
 #iliyana {
   text-align: center;
-  margin-top: 6%;
-  margin-left: 2%;
+  margin-top: 40px;
+  margin-left: 25px;
 }
 
 #rumen {
   text-align: center;
-  margin-top: -45%;
-  margin-left: 35%;
+  margin-top: -560px;
+  margin-left: 450px;
 }
 
 #ivan {
   text-align: center;
-  margin-top: -45.5%;
-  margin-left: 70%;
+  margin-top: -570px;
+  margin-left: 885px;
 }
