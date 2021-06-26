@@ -42,5 +42,12 @@ form {
   display: inline-block;
 }
 
+.itm{
+  border-radius: 5px;
+   box-shadow: 5px 2px #0000;
+   font-size: 17px;
+   border: none;
+   background-color: #cccccc;
+}
 
    
