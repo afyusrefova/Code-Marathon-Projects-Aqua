@@ -53,3 +53,16 @@
 .row2 {
     display: flex;
 }
+
+.head {
+    text-align: center;
+}
+
+.animals {
+     background-image: linear-gradient(to bottom right, #adadeb, #33bbff);
+}
+body {
+    background-image: linear-gradient(to bottom right, green, lightblue);
+    width: 100%;
+    height: 100%;
+}
