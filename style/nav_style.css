@@ -126,12 +126,13 @@ nav {
         width: 30%;
         height: 90vh;
         top: 10vh;
-        right: -50%;
+        left: 65%;
         text-align: center;
         transition: all 1s;
         padding-top: 3%;
         padding-right: 5%;
         background-color: #fff;
+        display: none;
     }
 
     .nav_links ul li {
