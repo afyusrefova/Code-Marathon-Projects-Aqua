@@ -109,3 +109,44 @@ nav {
 #check {
     display: none;
 }
+
+@media (max-width: 960px) {
+
+    nav {
+        background: white;
+    }
+
+    #logo {
+        height: 93px;
+        width: 100px;
+        text-align: center;
+        display: block;
+    }
+
+    .nav_links {
+        position: absolute;
+        width: 30%;
+        height: 90vh;
+        top: 10vh;
+        right: -50%;
+        text-align: center;
+        transition: all 1s;
+        padding-top: 3%;
+        padding-right: 5%;
+        background-color: #fff;
+    }
+
+    .nav_links ul li {
+        display: block;
+        width: 92%;
+        margin-top: 40px;
+        padding-bottom: 40px;
+        line-height: 40px;
+        border-bottom: #000 solid 2px;
+    }
+
+    .nav_links ul li a {
+        font-size: 20px;
+        color: #000;
+    }
+}
