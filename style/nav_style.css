@@ -19,8 +19,6 @@ nav {
 #logo {
     height: 84px;
     width: 100px;
-    display: inline;
-    float: left;
 }
 
 .nav_links {
@@ -79,7 +77,7 @@ nav {
 }
 
 .dropdown-content a {
-    color: black;
+    color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -145,8 +143,20 @@ nav {
         border-bottom: #000 solid 2px;
     }
 
-    .nav_links ul li a {
-        font-size: 20px;
-        color: #000;
+    .checkbox #on {
+        display: block;
+    }
+
+    #check:checked ~ .nav_links {
+        display: block;
+        left: 65%
+    }
+
+    #check:checked ~ .checkbox #on {
+        display: none;
+    }
+
+    #check:checked ~ .checkbox #off {
+        display: block;
     }
 }
