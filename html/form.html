@@ -18,96 +18,93 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
 
-<!--Dropdown Menu-->
-<nav class = "borders">
-<div class="dropdown">
-  <button class="dropbtn">Начало</button>
-  <div class="dropdown-content">
-    <a href="index.html">Назад</a>
-  </div>
-</div>
+<!--Menu-->
+        <nav>
 
-<div class="dropdown">
-  <button class="dropbtn">Водни местности и животни</button>
-  <div class="dropdown-content">
-    <a href="localities.html">Местности</a>
-    <a href="#">Животни</a>
-  </div>
-</div>
+            <a href="../index.html"><img id="logo" src="../images/logo.png" alt="logo"></a>
 
-<div class="dropdown">
-  <button class="dropbtn">Всичко за животните</button>
-  <div class="dropdown-content">
-    <a href="#">Наблюдение</a>
-    <a href="#">Опазване</a>
-    <a href="#">Изследване</a>
-  </div>
-</div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbox">
+                <p id="on">&#9776;</p> <p id="off">&#9747;</p>
+            </label>
 
-<div class="dropdown">
-  <button class="dropbtn">Контакти</button>
-  <div class="dropdown-content">
-    <a href="contact.html">Свържи се с нас</a>
-  </div>
-</div>
+            <div class="nav_links">
 
-<div class="dropdown">
-  <button class="dropbtn">Регистрация</button>
-  <div class="dropdown-content">
-    <a href="form.html">Форма</a>
-  </div>
-</div>
-</nav>
+                <ul>
+
+                    <li class="act"><a class="inactive" href="../index.html">Начало</a></li>
+                    <li><a class="inactive" href="localities.html">Водни местности</a></li>
+                    <li class="dropdown">
+
+                        <a class="inactive">Застрашени животни  &#9660;</a>
+
+                        <div class="dropdown-content">
+
+                            <a href="animals.html">Видове</a>
+                            <a href="observation.html">Наблюдения</a>
+                            <a href="protection.html">Опазване</a>
+
+                        </div>
+
+                    </li>
+                    <li><a class="inactive" href="contact.html">Контакти</a></li>
+                    <li><a class="active" href="form.html">Регистрация</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
 
  <br>
  
 
-<form action = "Test.html">
+<form>
     <fieldset>
     <legend class = "legend">Регистрационна форма</legend>
 
     <br>
     <label for = "FirstName">Име:</label>
-        <input type = "text" name = "FirstName" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+        <input type = "text" name = "FirstName" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
             
         <br>
             <br>
             
             <label for = "FirstName">Презиме:</label>
-            <input type = "text" name = "FirstName" placeholder = "Second Name" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+            <input type = "text" name = "FirstName" placeholder = "Second Name" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
             
             <br>
             <br>
 
             <label for = "LastName">Фамилия:</label>
-            <input type = "text" name = "LastName" placeholder = "Last Name" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+            <input type = "text" name = "LastName" placeholder = "Last Name" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
             
             <br>
             <br>
             
             <label for = "email">Имейл:</label>
-            <input type = "email" name = "email" placeholder = "Email" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+            <input type = "email" name = "email" placeholder = "Email" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
             
             <br>
             <br>
             
             <label for = "password">Парола:</label>
-            <input type = "password" name = "password" placeholder = "Password" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+            <input type = "password" name = "password" placeholder = "Password" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
 
             <br>
             <br>
             
             <label for = "password">Повтори парола:</label>
-            <input type = "password" name = "password" placeholder = "Password" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}">
+            <input type = "password" name = "password" placeholder = "Password" placeholder = "First Name" required autofocus pattern = "[A-Z]{1-20}" class = "itm">
             
             <br>
             <br>
             
             <label for = "tech">От кого научихте за нас?</label>
-            <input list = "techno" name = "tech">
+            <input list = "techno" name = "tech" class = "itm">
             <datalist id = "techno">
-                <option value = "Реклама">
-                <option value = "Отзив в социалните мрежи">
+                <option value = "Реклама" class = "itm">
+                <option value = "Отзив в социалните мрежи" class = "itm">
                 <option value = "Приятел">
             </datalist>
           
@@ -120,12 +117,12 @@
             <br>
             <br>
 
-            <button onclick="window.location.href='index.html'" class = "smt">Регистриране</button>
+            <button onclick="window.location.href='../index.html'" class = "smt" class = "itm">Регистриране</button>
           
             <br>
             <br>
 
-            <button onclick="window.location.href='form.html'" class = "rst">Изчистване</button>
+            <button onclick="window.location.href='form.html'" class = "rst" class = "itm">Изчистване</button>
 
         </fieldset>
     </form>
