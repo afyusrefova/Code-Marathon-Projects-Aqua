@@ -17,8 +17,8 @@ nav {
 }
 
 #logo {
-    height: 84px;
-    width: 100px;
+    height: 90px;
+    width: 150px;
 }
 
 .nav_links {
@@ -115,8 +115,8 @@ nav {
     }
 
     #logo {
-        height: 93px;
-        width: 100px;
+        height: 90px;
+        width: 150px;
         text-align: center;
         display: block;
     }
