@@ -266,6 +266,146 @@ void sortBirdsByCondition(BIRD* birds, int& index)
     }
 }
 
+void filterBirdsBySpecies(BIRD* birds, int& index)
+{
+    string filter;
+    cout << GRAY << "Enter the species of birds which you want to see: " << RESET;
+    getline(cin, filter);
+
+    cout << endl;
+
+    int count = 0;
+
+    for (int i = 0; i < index; i++)
+    {
+        if (birds[i].species == filter)
+        {
+            displayBird(birds, i);
+            cout << endl << endl;
+            count++;
+        }
+    }
+
+    if (count == 0)
+        cout << RED << "Sorry, we couldn't find any birds of the species you are looking for!" << RESET << endl;
+}
+
+void filterBirdsByAge(BIRD* birds, int& index)
+{
+    int filter;
+    cout << GRAY << "Enter the age of birds which you want to see: " << RESET;
+    filter = cinInt();
+
+    cout << endl;
+
+    int count = 0;
+
+    for (int i = 0; i < index; i++)
+    {
+        if (birds[i].age == filter)
+        {
+            displayBird(birds, i);
+            cout << endl << endl;
+            count++;
+        }
+    }
+
+    if (count == 0)
+        cout << RED << "Sorry, we couldn't find any birds of the age you are looking for!" << RESET << endl;
+}
+
+void filterBirdsBySex(BIRD* birds, int& index)
+{
+    int filter;
+    cout << GRAY << "Enter the sex of birds which you want to see (1-M, 2-F, 3-NB): " << RESET;
+    filter = cinInt();
+
+    cout << endl;
+
+    int count = 0;
+
+    for (int i = 0; i < index; i++)
+    {
+        if (filter == 1)
+        {
+            if (birds[i].sex == sex::male)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+        else if (filter == 2)
+        {
+            if (birds[i].sex == sex::female)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+        else if (filter == 3)
+        {
+            if (birds[i].sex == sex::nonBinary)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+    }
+
+    if (count == 0)
+    {
+        cout << RED << "Sorry, we couldn't find any birds of the sex you are looking for!" << RESET << endl;
+    }
+}
+
+void filterBirdsByCondition(BIRD* birds, int& index)
+{
+    int filter;
+    cout << GRAY << "Enter the condition of birds which you want to see (1-G, 2-A, 3-B): " << RESET;
+    filter = cinInt();
+
+    cout << endl;
+
+    int count = 0;
+
+    for (int i = 0; i < index; i++)
+    {
+        if (filter == 1)
+        {
+            if (birds[i].condition == condition::good)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+        else if (filter == 2)
+        {
+            if (birds[i].condition == condition::average)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+        else if (filter == 3)
+        {
+            if (birds[i].condition == condition::bad)
+            {
+                displayBird(birds, i);
+                cout << endl << endl;
+                count++;
+            }
+        }
+    }
+
+    if (count == 0)
+        cout << RED << "Sorry, we couldn't find any birds of the condition you are looking for!" << RESET << endl;
+}
+
 
 void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
