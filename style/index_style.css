@@ -2,3 +2,24 @@ body {
   background-image: url('https://th.bing.com/th/id/Rb2681e174b32978e4a5deb39855cd56e?rik=XdudXEO7Q4CRqw&pid=ImgRaw');
   background-size: 100%;
 }
+
+.quote {
+  border: hidden;
+  margin-left: 24%;
+  width:  50%;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 20px;
+}
