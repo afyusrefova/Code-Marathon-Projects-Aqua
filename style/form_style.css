@@ -2,7 +2,7 @@ body {
   background: #00aaff;
 }
 
-/*Form*/
+/*Form sizes and positions*/
 form {
   background-image: linear-gradient(to bottom right, lightgreen, blue);
   background-size: 100%;
@@ -14,13 +14,14 @@ form {
   width: 700px;
   height: 30%;
   padding: 30px;
-  margin-left: 22%;
+  margin-left: 27%;
 }
 
 .legend {
   font-size: 25px;
 }
 
+/*Position, sizes and colors for the button "Регистриране"*/
 .smt {
   font-size: 90%;
   background-color: #99ccff;
@@ -31,6 +32,7 @@ form {
   text-decoration: none;
 }
 
+/*Position, sizes and colors for the button "Изчистване"*/
 .rst {
   font-size: 90%;
   background-color: #99ccff;
@@ -48,6 +50,4 @@ form {
    font-size: 17px;
    border: none;
    background-color: #cccccc;
-}
-
-   
+}  
