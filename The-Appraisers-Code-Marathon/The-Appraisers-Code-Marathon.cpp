@@ -417,6 +417,40 @@ void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
     speciesIndex = 4;
 }
 
+void displayBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
+{
+    cout << GRAY << "ID: " << RESET << index + 1 << endl;
+
+    cout << YELLOW << "Species name: " << RESET << birdSpecies[index].species_name << endl;
+
+    cout << GREEN << "Population: " << RESET << birdSpecies[index].population << endl;
+
+    cout << CYAN << "State: " << RESET;
+    if (birdSpecies[index].state == state::stable)
+        cout << "Stable" << endl;
+    else if (birdSpecies[index].state == state::vulnerable)
+        cout << "Vulnerable" << endl;
+    else
+        cout << "Endangered" << endl;
+
+    cout << PURPLE << "Do they migrate: " << RESET;
+    if (birdSpecies[index].migration == true)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
+}
+
+void displayAllBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
+{
+    cout << YELLOW << "List of all species: " << RESET << endl << endl;
+
+    for (int i = 0; i < index; i++)
+    {
+        displayBirdSpecies(birdSpecies, i);
+        cout << endl << endl;
+    }
+}
+
 
 int main()
 {
