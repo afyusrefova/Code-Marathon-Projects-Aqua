@@ -24,7 +24,6 @@ nav {
 .nav_links {
     text-align: center;
     list-style: none;
-    z-index: 1;
 }
 
 .nav_links li {
