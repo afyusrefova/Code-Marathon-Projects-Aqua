@@ -2,8 +2,9 @@
     background-color: transparent;
     width: 370px;
     height: 350px;
-    perspective: 1000px;
+    perspective: 1000px;/*Size of the card while it is rotating*/
     float: left;
+	/*Position of the card*/
     margin-right: 5%;
     margin-top: 3%;
     margin-left: 5%;
@@ -11,6 +12,7 @@
     display: inline;
 }
 
+/*Position and sizes of the speed of the rotation*/
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -18,9 +20,10 @@
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /*Color and size of the box-shadow*/
 }
 
+/*Speed for flipping the card to the back side*/
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
@@ -29,7 +32,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;/*Hidden the back face of the cards*/
     backface-visibility: hidden;  
 }
 
@@ -40,29 +43,35 @@
 
 .flip-card-back {
     background-color: #b3b2af;
-    color: white;
-    transform: rotateY(180deg); 
+    color: white; /*Color of the font of the text in back side*/
+    transform: rotateY(180deg); /*Speed for flipping the card to the back side*/
     
 }
 
+/*Position pictures on row1*/
 .row1 {
     display: flex;
     text-decoration: none;
 }
 
+/*Position pictures on row2*/
 .row2 {
     display: flex;
 }
+
 
 .head {
     text-align: center;
 }
 
+/*Background-image for animals.html*/
 .animals {
      background-image: linear-gradient(to bottom right, #adadeb, #33bbff);
+	 margin-bottom: 100%;
 }
+
+/*Background-image for localities.html*/
 body {
     background-image: linear-gradient(to bottom right, green, lightblue);
-    width: 100%;
-    height: 100%;
+    margin-bottom: 100%;
 }
