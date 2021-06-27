@@ -17,7 +17,7 @@ nav {
 }
 
 #logo {
-    height: 90px;
+    height: 80px;
     width: 120px;
 }
 
@@ -108,15 +108,15 @@ nav {
     display: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 960px) {
 
     nav {
         background: white;
     }
 
     #logo {
-        height: 90px;
-        width: 120px;
+        height: 93px;
+        width: 100px;
         text-align: center;
         display: block;
     }
