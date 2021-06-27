@@ -202,6 +202,70 @@ void editBird(BIRD* birds, int& index)
     index--;
 }
 
+void sortBirdsBySpecies(BIRD* birds, int& index)
+{
+    for (int i = 0; i < index - 1; i++)
+    {
+        for (int j = 0; j < index - i - 1; j++)
+        {
+            if (birds[j].species > birds[j + 1].species)
+            {
+                BIRD temp = birds[j];
+                birds[j] = birds[j + 1];
+                birds[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void sortBirdsByAge(BIRD* birds, int& index)
+{
+    for (int i = 0; i < index - 1; i++)
+    {
+        for (int j = 0; j < index - i - 1; j++)
+        {
+            if (birds[j].age > birds[j + 1].age)
+            {
+                BIRD temp = birds[j];
+                birds[j] = birds[j + 1];
+                birds[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void sortBirdsBySex(BIRD* birds, int& index)
+{
+    for (int i = 0; i < index - 1; i++)
+    {
+        for (int j = 0; j < index - i - 1; j++)
+        {
+            if (birds[j].sex > birds[j + 1].sex)
+            {
+                BIRD temp = birds[j];
+                birds[j] = birds[j + 1];
+                birds[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void sortBirdsByCondition(BIRD* birds, int& index)
+{
+    for (int i = 0; i < index - 1; i++)
+    {
+        for (int j = 0; j < index - i - 1; j++)
+        {
+            if (birds[j].condition > birds[j + 1].condition)
+            {
+                BIRD temp = birds[j];
+                birds[j] = birds[j + 1];
+                birds[j + 1] = temp;
+            }
+        }
+    }
+}
+
 
 void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
