@@ -13,9 +13,8 @@
 	font-family: sans-serif;
 }
 .download_button {
-    position:absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
+
+    margin-top: 110px;
     height: 65px; /*requires explicit height*/
 	display: block;
 	background: #00A9D4;
