@@ -17,13 +17,14 @@ nav {
 }
 
 #logo {
-    height: 80px;
+    height: 90px;
     width: 120px;
 }
 
 .nav_links {
     text-align: center;
     list-style: none;
+    z-index: 1;
 }
 
 .nav_links li {
@@ -108,15 +109,15 @@ nav {
     display: none;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1300px) {
 
     nav {
         background: white;
     }
 
     #logo {
-        height: 93px;
-        width: 100px;
+        height: 90px;
+        width: 120px;
         text-align: center;
         display: block;
     }
