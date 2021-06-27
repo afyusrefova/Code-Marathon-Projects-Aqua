@@ -27,6 +27,28 @@ using namespace std;
 #define BCyan   "\033[1;36m"       
 #define BWhite  "\033[1;37m"      
 
+
+enum class sex
+{
+    male,
+    female,
+    nonBinary
+};
+
+enum class condition
+{
+    good,
+    average,
+    bad
+};
+
+enum class state
+{
+    stable,
+    vulnerable,
+    endangered
+};
+
 int main()
 {
 
