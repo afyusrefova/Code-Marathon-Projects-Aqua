@@ -438,11 +438,11 @@ void displayBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
 
     cout << CYAN << "State: " << RESET;
     if (birdSpecies[index].state == state::stable)
-        cout << "Stable" << endl;
+        cout << GREEN <<"Stable" << RESET << endl;
     else if (birdSpecies[index].state == state::vulnerable)
-        cout << "Vulnerable" << endl;
+        cout << YELLOW <<"Vulnerable" << RESET << endl;
     else
-        cout << "Endangered" << endl;
+        cout << RED << "Endangered" << RESET << endl;
 
     cout << PURPLE << "Do they migrate: " << RESET;
     if (birdSpecies[index].migration == true)
@@ -492,7 +492,9 @@ bool returnBack()
     return false;
 }
 
-void displayBirdssMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
+
+
+void displayBirdsMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     bool cont = true;
 
@@ -615,6 +617,53 @@ void displayBirdssMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, i
     }
 }
 
+void displayBirdSpeciesMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
+{
+    bool cont = true;
+
+    while (cont == true)
+    {
+        int choice = 0;
+
+        cout << endl;
+        cout << CYAN << "   _____                 _           " << endl;
+        cout << "  / ____|               (_)          " << endl;
+        cout << " | (___  _ __   ___  ___ _  ___  ___ " << endl;
+        cout << "  \\___ \\| '_ \\ / _ \\/ __| |/ _ \\/ __|" << endl;
+        cout << "  ____) | |_) |  __/ (__| |  __/\\__ \\" << endl;
+        cout << " |_____/| .__/ \\___|\\___|_|\\___||___/" << endl;
+        cout << "        | |                          " << endl;
+        cout << "        |_|                          " << endl << endl << RESET;
+        cout << " =======================================" << endl;
+        cout << "|" << " 1)" << YELLOW << " Show a list of all birds    " << RESET << "       |" << endl;
+        cout << "|" << " 2)" << GRAY << " Return back to the Main Menu    " << RESET << "   |" << endl;
+        cout << " =======================================" << endl << endl;
+
+        cout << "Enter your choice: ";
+        choice = cinInt();
+
+        while (choice > 2 or choice < 1)
+        {
+            cout << endl;
+            cout << RED << "The number you enter has to be between 1 and 2! Please, try again: " << RESET;
+            choice = cinInt();
+        }
+
+        system("cls");
+
+        switch (choice)
+        {
+        case 1:
+            displayAllBirdSpecies(birdSpecies, speciesIndex);
+            cont = returnBack();
+            break;
+       
+        case 2:
+            cont = false;
+            break;
+        }
+    }
+}
 
 void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
@@ -656,10 +705,10 @@ void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int
         switch (choice)
         {
         case 1:
-            displayBirdssMenu(birds, birdIndex, birdSpecies, speciesIndex);
+            displayBirdsMenu(birds, birdIndex, birdSpecies, speciesIndex);
             break;
         case 2:
-           
+            displayBirdSpeciesMenu(birds, birdIndex, birdSpecies, speciesIndex);
             break;
         case 3:
             exit(0);
