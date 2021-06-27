@@ -452,7 +452,72 @@ void displayAllBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
 }
 
 
+
+
+void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
+{
+    int choice = 0;
+
+    while (choice != 3)
+    {
+        cout << endl;
+
+        cout << " __  __       _         __  __                      " << endl;
+        cout << "|  \\/  |     (_)       |  \\/  |                   " << endl;
+        cout << "| \\  / | __ _ _ _ __   | \\  / | ___ _ __  _   _   " << endl;
+        cout << "| |\\/| |/ _` | | '_ \\  | |\\/| |/ _ \\ '_ \\| | | |" << endl;
+        cout << "| |  | | (_| | | | | | | |  | |  __/ | | | |_| |    " << endl;
+        cout << "|_|  |_|\\__,_|_|_| |_| |_|  |_|\\___|_| |_|\\__,_| " << endl;
+
+        cout << endl;
+        cout << endl;
+
+        cout << "Which set of data would you like to work with?" << endl << endl;
+        cout << " =====================" << endl;
+        cout << "|" << " 1)" << GREEN << " Birds" << RESET <<"            |" << endl;
+        cout << "|" << " 2)" << CYAN << " Species Of birds" << RESET << " |" << endl;
+        cout << "|" <<  " 3)" <<PURPLE << " Exit" << RESET << "             |" << endl;
+        cout << " =====================" << endl;
+        cout << endl;
+        cout << "Enter your choice: ";
+        choice = cinInt();
+
+        while (choice > 3 or choice < 1)
+        {
+            cout << endl;
+            cout << RED << "The number you enter has to be between 1 and 3! Please, try again: " << RESET;
+            choice = cinInt();
+        }
+
+        system("cls");
+
+        switch (choice)
+        {
+        case 1:
+            
+            break;
+        case 2:
+           
+            break;
+        case 3:
+            exit(0);
+            break;
+        }
+    }
+
+}
+
 int main()
 {
+    BIRD* birds = new BIRD[300];
+    BIRD_SPECIES* birdSpecies = new BIRD_SPECIES[100];
+    int birdIndex = 0, speciesIndex = 0;
 
+    displayMainMenu(birds, birdIndex, birdSpecies, speciesIndex);
+
+   /* initBirds(birds, birdIndex);
+    initBirdSpecies(birds, birdSpecies, speciesIndex);
+
+    editBird(birds);
+    displayBird(birds, 15);*/
 }
