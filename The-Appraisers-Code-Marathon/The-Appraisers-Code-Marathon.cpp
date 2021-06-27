@@ -49,6 +49,26 @@ enum class state
     endangered
 };
 
+
+struct BIRD
+{
+    string species = "";
+    short int age = 0;
+    sex sex = sex::female;
+    condition condition = condition::average;
+};
+
+struct BIRD_SPECIES
+{
+    string species_name = "";
+    int population = 0;
+    state state = state::vulnerable;
+    bool migration = false;
+    BIRD birds[30];
+};
+
+
+
 int main()
 {
 
