@@ -139,6 +139,69 @@ void displayBirds(BIRD* birds, int index)
     }
 }
 
+void enterBird(BIRD* birds, int& index)
+{
+    int choice;
+
+    cout << YELLOW << "Enter info about bird:" << RESET << endl;
+
+    cout << YELLOW << "Name of species: " << RESET;
+    cin >> birds[index].species;
+
+    cout << GREEN << "Age (in years): " << RESET;
+    birds[index].age = cinInt();
+
+    cout << CYAN << "Sex (1-M, 2-F, 3-NB): " << RESET;
+    choice = cinInt();
+
+    if (choice == 1)
+        birds[index].sex = sex::male;
+    else if (choice == 2)
+        birds[index].sex = sex::female;
+    else
+        birds[index].sex = sex::nonBinary;
+
+
+    cout << PURPLE << "Condition (1-G, 2-A, 3-B): " << RESET;
+    choice = cinInt();
+
+    if (choice == 1)
+        birds[index].condition = condition::good;
+    else if (choice == 2)
+        birds[index].condition = condition::average;
+    else
+        birds[index].condition = condition::bad;
+
+    index++;
+}
+
+void deleteBird(BIRD* birds, int& index)
+{
+    int position;
+
+    cout << GRAY << "Enter the ID of the bird you would like to remove from the list: " << RESET;
+    position = cinInt();
+    position -= 1;
+
+    for (int i = position; i < index - 1; i++)
+    {
+        birds[i] = birds[i + 1];
+    }
+
+    index--;
+}
+
+void editBird(BIRD* birds, int& index)
+{
+    int position;
+    cout << GRAY << "Enter the ID of the bird you would like to edit: " << RESET;
+    cin >> position;
+    position -= 1;
+
+    enterBird(birds, position);
+    index--;
+}
+
 
 void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
