@@ -1,10 +1,9 @@
 .text {
-  margin-left: 20px;
+  margin-left: 135px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 550px;
   font-size: 20px;
   padding: 10px;
-
 }
 
 .photos {
@@ -12,7 +11,8 @@
   width: 557px;
   height: 447px;
   margin-top: -450px;
-  margin-left: 650px;
+  margin-left: 755px;
+
 }
 
 .head {
