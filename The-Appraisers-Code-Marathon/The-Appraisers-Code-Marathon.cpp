@@ -67,6 +67,7 @@ struct BIRD_SPECIES
     BIRD birds[30];
 };
 
+
 int cinInt()
 {
     int number;
@@ -83,6 +84,37 @@ int cinInt()
     return number;
 }
 
+void initBirds(BIRD* birds, int& index)
+{
+    birds[0] = { "Lesser White-fronted Goose (Anser erythropus)", 3, sex::female, condition::average };
+    birds[1] = { "Lesser White-fronted Goose (Anser erythropus)", 4, sex::male, condition::bad };
+    birds[2] = { "Lesser White-fronted Goose (Anser erythropus)", 1, sex::male, condition::good };
+    birds[3] = { "Lesser White-fronted Goose (Anser erythropus)", 1, sex::female, condition::good };
+    birds[4] = { "Red-breasted Goose (Branta ruficollis)", 5, sex::male, condition::bad };
+    birds[5] = { "Red-breasted Goose (Branta ruficollis)", 2, sex::female, condition::good };
+    birds[6] = { "Red-breasted Goose (Branta ruficollis)", 6, sex::male, condition::average };
+    birds[7] = { "Red-breasted Goose (Branta ruficollis)", 5, sex::female, condition::bad };
+    birds[8] = { "Long-tailed Duck (Clangula hyemalis)", 6, sex::female, condition::average };
+    birds[9] = { "Long-tailed Duck (Clangula hyemalis)", 3, sex::male, condition::good };
+    birds[10] = { "Long-tailed Duck (Clangula hyemalis)", 5, sex::male, condition::bad };
+    birds[11] = { "Long-tailed Duck (Clangula hyemalis)", 4, sex::female, condition::good };
+    birds[12] = { "White-headed Duck (Oxyura leucocephala)", 1, sex::male, condition::average };
+    birds[13] = { "White-headed Duck (Oxyura leucocephala)", 3, sex::male, condition::bad };
+    birds[14] = { "White-headed Duck (Oxyura leucocephala)", 4, sex::female, condition::good };
+    birds[15] = { "White-headed Duck (Oxyura leucocephala)", 2, sex::female, condition::average };
+
+    index = 16;
+}
+
+void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
+{
+    birdSpecies[0] = { "Lesser White - fronted Goose(Anser erythropus)", 900, state::vulnerable, true, {birds[0], birds[1], birds[2], birds[3]} };
+    birdSpecies[1] = { "Red-breasted Goose (Branta ruficollis)", 350, state::endangered, true, {birds[4], birds[5], birds[6], birds[7]} };
+    birdSpecies[2] = { "Long-tailed Duck (Clangula hyemalis)", 1100, state::vulnerable, false, {birds[8], birds[9], birds[10], birds[11]} };
+    birdSpecies[3] = { "White-headed Duck (Oxyura leucocephala)", 400, state::endangered, false, {birds[12], birds[13], birds[14], birds[15]} };
+
+    speciesIndex = 4;
+}
 
 
 int main()
