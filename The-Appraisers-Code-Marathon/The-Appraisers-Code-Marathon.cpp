@@ -106,6 +106,40 @@ void initBirds(BIRD* birds, int& index)
     index = 16;
 }
 
+void displayBird(BIRD* birds, int index)
+{
+    cout << GRAY << "ID: " << RESET << index + 1 << endl;
+    cout << YELLOW << "Species name: " << RESET << birds[index].species << endl;
+    cout << GREEN << "Age (in years): " << RESET << birds[index].age << endl;
+    cout << CYAN << "Sex: " << RESET;
+    if (birds[index].sex == sex::male)
+        cout << "Male" << endl;
+    else if (birds[index].sex == sex::female)
+        cout << "Female" << endl;
+    else
+        cout << "Non-binary" << endl;
+
+    cout << PURPLE << "Condition: " << RESET;
+    if (birds[index].condition == condition::good)
+        cout << "Good" << endl;
+    else if (birds[index].condition == condition::average)
+        cout << "Average" << endl;
+    else
+        cout << "Bad" << endl;
+}
+
+void displayBirds(BIRD* birds, int index)
+{
+    cout << YELLOW << "List of all birds: " << RESET << endl << endl;
+
+    for (int i = 0; i < index; i++)
+    {
+        displayBird(birds, i);
+        cout << endl << endl;
+    }
+}
+
+
 void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     birdSpecies[0] = { "Lesser White - fronted Goose(Anser erythropus)", 900, state::vulnerable, true, {birds[0], birds[1], birds[2], birds[3]} };
