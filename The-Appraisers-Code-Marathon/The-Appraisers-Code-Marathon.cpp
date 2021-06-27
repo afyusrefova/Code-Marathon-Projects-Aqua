@@ -3,8 +3,8 @@
 #include <string>
 using namespace std;
 
+// defining colors used for output design
 #define RESET   "\033[0m"
-
 #define RED     "\033[1;91m" 
 #define YELLOW  "\033[1;93m"  
 #define GREEN   "\033[1;92m"
@@ -12,23 +12,10 @@ using namespace std;
 #define CYAN    "\033[1;96m"
 #define PURPLE  "\033[1;95m"
 #define GRAY    "\033[1;90m" 
-#define MINT    "\033[1;96m"
-
 #define WHITE   "\033[4;37m"
-#define BWhite  "\033[1;37m"  
-#define UWhite  "\033[4;37m"  
-
-#define BBlack  "\033[1;30m"    
-#define BRed    "\033[1;31m"         
-#define BGreen  "\033[1;32m"       
-#define BYellow "\033[1;33m"      
-#define BBlue   "\033[1;34m"       
-#define BPurple "\033[1;35m"      
-#define BCyan   "\033[1;36m"       
-#define BWhite  "\033[1;37m"      
 
 
-
+// enumeration types for birds' sex, condition and state 
 enum class sex
 {
     male,
@@ -69,13 +56,11 @@ struct BIRD_SPECIES
 };
 
 
-//void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex);
-
+// reads input and prints an error until the user enters an integer
 int cinInt()
 {
     int number;
 
-    //while loop until the value entered is an integer
     while (!(cin >> number)) {
 
         cin.clear();
@@ -87,6 +72,7 @@ int cinInt()
     return number;
 }
 
+// function that fills up the array "birds" with data
 void initBirds(BIRD* birds, int& index)
 {
     birds[0] = { "Lesser White-fronted Goose (Anser erythropus)", 3, sex::female, condition::average };
@@ -109,6 +95,7 @@ void initBirds(BIRD* birds, int& index)
     index = 16;
 }
 
+// function that shows data about one particular bird
 void displayBird(BIRD* birds, int index)
 {
     cout << GRAY << "ID: " << RESET << index + 1 << endl;
@@ -131,6 +118,7 @@ void displayBird(BIRD* birds, int index)
         cout << "Bad" << endl;
 }
 
+// function that shows data for all the birds
 void displayBirds(BIRD* birds, int index)
 {
     cout << GRAY << "List of all birds: " << RESET << endl << endl;
@@ -142,6 +130,7 @@ void displayBirds(BIRD* birds, int index)
     }
 }
 
+// function that inputs data for a (new) bird
 void enterBird(BIRD* birds, int& index)
 {
     int choice;
@@ -178,6 +167,7 @@ void enterBird(BIRD* birds, int& index)
     index++;
 }
 
+// function that deletes a bird from the array "birds"
 void deleteBird(BIRD* birds, int& index)
 {
     int position;
@@ -194,6 +184,7 @@ void deleteBird(BIRD* birds, int& index)
     index--;
 }
 
+// function that updates the data about a bird
 void editBird(BIRD* birds, int& index)
 {
     int position;
@@ -205,6 +196,7 @@ void editBird(BIRD* birds, int& index)
     
 }
 
+// function that sorts the birds of the array "birds" by their species name and prints the sorted array
 void sortBirdsBySpecies(BIRD* birds, int& index)
 {
     for (int i = 0; i < index - 1; i++)
@@ -223,6 +215,7 @@ void sortBirdsBySpecies(BIRD* birds, int& index)
     displayBirds(birds, index);
 }
 
+// function that sorts the birds of the array "birds" by their age and prints the sorted array
 void sortBirdsByAge(BIRD* birds, int& index)
 {
     for (int i = 0; i < index - 1; i++)
@@ -241,6 +234,7 @@ void sortBirdsByAge(BIRD* birds, int& index)
     displayBirds(birds, index);
 }
 
+// function that sorts the birds of the array "birds" by their sex and prints the sorted array
 void sortBirdsBySex(BIRD* birds, int& index)
 {
     for (int i = 0; i < index - 1; i++)
@@ -259,6 +253,7 @@ void sortBirdsBySex(BIRD* birds, int& index)
     displayBirds(birds, index);
 }
 
+// function that sorts the birds of the array "birds" by their condition and prints the sorted array
 void sortBirdsByCondition(BIRD* birds, int& index)
 {
     for (int i = 0; i < index - 1; i++)
@@ -277,6 +272,7 @@ void sortBirdsByCondition(BIRD* birds, int& index)
     displayBirds(birds, index);
 }
 
+// function that filters the birds of the array "birds" with the chosen by the user species 
 void filterBirdsBySpecies(BIRD* birds, int& index)
 {
     string filter;
@@ -301,6 +297,7 @@ void filterBirdsBySpecies(BIRD* birds, int& index)
         cout << RED << "Sorry, we couldn't find any birds of the species you are looking for!" << RESET << endl;
 }
 
+// function that filters the birds of the array "birds" with the chosen by the user age
 void filterBirdsByAge(BIRD* birds, int& index)
 {
     int filter;
@@ -325,6 +322,7 @@ void filterBirdsByAge(BIRD* birds, int& index)
         cout << RED << "Sorry, we couldn't find any birds of the age you are looking for!" << RESET << endl;
 }
 
+// function that filters the birds of the array "birds" with the chosen by the user sex 
 void filterBirdsBySex(BIRD* birds, int& index)
 {
     int filter;
@@ -372,6 +370,7 @@ void filterBirdsBySex(BIRD* birds, int& index)
     }
 }
 
+// function that filters the birds of the array "birds" with the chosen by the user condition
 void filterBirdsByCondition(BIRD* birds, int& index)
 {
     int filter;
@@ -418,6 +417,7 @@ void filterBirdsByCondition(BIRD* birds, int& index)
 }
 
 
+// function that fills up the array "birdSpecies" with data
 void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     birdSpecies[0] = { "Lesser White - fronted Goose(Anser erythropus)", 900, state::vulnerable, true, {birds[0], birds[1], birds[2], birds[3]} };
@@ -428,6 +428,7 @@ void initBirdSpecies(BIRD* birds, BIRD_SPECIES* birdSpecies, int& speciesIndex)
     speciesIndex = 4;
 }
 
+// function that shows data about one particular species of birds
 void displayBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
 {
     cout << GRAY << "ID: " << RESET << index + 1 << endl;
@@ -451,6 +452,7 @@ void displayBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
         cout << "No" << endl;
 }
 
+// function that shows data for all the species
 void displayAllBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
 {
     cout << YELLOW << "List of all species: " << RESET << endl << endl;
@@ -462,7 +464,7 @@ void displayAllBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
     }
 }
 
-
+// function that asks the user if they want to return to the main menu
 bool returnBack()
 {
     int choice;
@@ -493,7 +495,7 @@ bool returnBack()
 }
 
 
-
+// sub menu for birds
 void displayBirdsMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     bool cont = true;
@@ -617,6 +619,7 @@ void displayBirdsMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, in
     }
 }
 
+// sub menu for species of birds
 void displayBirdSpeciesMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     bool cont = true;
@@ -665,6 +668,7 @@ void displayBirdSpeciesMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpeci
     }
 }
 
+// main menu of the program
 void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
 {
     int choice = 0;
@@ -724,8 +728,10 @@ int main()
     BIRD_SPECIES* birdSpecies = new BIRD_SPECIES[100];
     int birdIndex = 0, speciesIndex = 0;
 
+    // filling the arrays with data
     initBirds(birds, birdIndex);
     initBirdSpecies(birds, birdSpecies, speciesIndex);
 
+    // calling the main menu
     displayMainMenu(birds, birdIndex, birdSpecies, speciesIndex);
 }
