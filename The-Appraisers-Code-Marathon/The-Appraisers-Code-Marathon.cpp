@@ -28,6 +28,7 @@ using namespace std;
 #define BWhite  "\033[1;37m"      
 
 
+
 enum class sex
 {
     male,
@@ -67,6 +68,8 @@ struct BIRD_SPECIES
     BIRD birds[30];
 };
 
+
+//void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex);
 
 int cinInt()
 {
@@ -130,7 +133,7 @@ void displayBird(BIRD* birds, int index)
 
 void displayBirds(BIRD* birds, int index)
 {
-    cout << YELLOW << "List of all birds: " << RESET << endl << endl;
+    cout << GRAY << "List of all birds: " << RESET << endl << endl;
 
     for (int i = 0; i < index; i++)
     {
@@ -143,7 +146,7 @@ void enterBird(BIRD* birds, int& index)
 {
     int choice;
 
-    cout << YELLOW << "Enter info about bird:" << RESET << endl;
+    cout << GRAY << "Enter info about bird:" << RESET << endl;
 
     cout << YELLOW << "Name of species: " << RESET;
     cin >> birds[index].species;
@@ -199,7 +202,7 @@ void editBird(BIRD* birds, int& index)
     position -= 1;
 
     enterBird(birds, position);
-    index--;
+    
 }
 
 void sortBirdsBySpecies(BIRD* birds, int& index)
@@ -216,6 +219,8 @@ void sortBirdsBySpecies(BIRD* birds, int& index)
             }
         }
     }
+
+    displayBirds(birds, index);
 }
 
 void sortBirdsByAge(BIRD* birds, int& index)
@@ -232,6 +237,8 @@ void sortBirdsByAge(BIRD* birds, int& index)
             }
         }
     }
+
+    displayBirds(birds, index);
 }
 
 void sortBirdsBySex(BIRD* birds, int& index)
@@ -248,6 +255,8 @@ void sortBirdsBySex(BIRD* birds, int& index)
             }
         }
     }
+
+    displayBirds(birds, index);
 }
 
 void sortBirdsByCondition(BIRD* birds, int& index)
@@ -264,6 +273,8 @@ void sortBirdsByCondition(BIRD* birds, int& index)
             }
         }
     }
+
+    displayBirds(birds, index);
 }
 
 void filterBirdsBySpecies(BIRD* birds, int& index)
@@ -452,6 +463,157 @@ void displayAllBirdSpecies(BIRD_SPECIES* birdSpecies, int index)
 }
 
 
+bool returnBack()
+{
+    int choice;
+
+    cout << endl;
+    cout << "What would you like to do now?" << endl << endl;
+    cout << GREEN << "1)" << RESET << " Stay in this menu" << endl;
+    cout << GRAY << "2)" << RESET << " Go back to the main menu" << endl << endl;
+    cout << "Enter your choice: ";
+
+    choice = cinInt();
+
+    while (choice > 2 or choice < 1)
+    {
+        cout << endl;
+        cout << RED << "The number you enter has to be either 1 or 2! Please, try again: " RESET;
+        choice = cinInt();
+    }
+
+    cout << endl;
+
+    system("cls");
+
+    if (choice == 1)
+        return true;
+
+    return false;
+}
+
+void displayBirdssMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
+{
+    bool cont = true;
+
+    while (cont == true)
+    {
+        int choice = 0;
+
+        cout << endl;
+        cout << GREEN << "  ____  _         _     "<< endl;
+        cout << " |  _ \\(_)       | |    " << endl;
+        cout << " | |_) |_ _ __ __| |___ " << endl;
+        cout << " |  _ <| | '__/ _` / __|" << endl;
+        cout << " | |_) | | | | (_|\\__ \\" << endl;
+        cout << " |____/|_|_|  \\___|___/" << endl << endl << RESET;
+        cout << " =======================================" << endl;
+        cout << "|" << " 1)" << CYAN << " Show a list of all birds    " << RESET << "       |" << endl;
+        cout << "|" << " 2)" << GREEN << " Add a new bird         " << RESET << "            |" << endl;
+        cout << "|" << " 3)" << RED << " Delete a bird        " << RESET << "              |" << endl;
+        cout << "|" << " 4)" << BLUE << " Edit info about a bird    " << RESET << "         |" << endl;
+        cout << "|" << " 5)" << PURPLE << " Show filtered list     " << RESET << "            |" << endl;
+        cout << "|" << " 6)" << YELLOW << " Show sorted list     " << RESET << "              |" << endl;
+        cout << "|" << " 7)" << GRAY << " Return back to the Main Menu    " << RESET << "   |" << endl;
+        cout << " =======================================" << endl << endl;
+
+        cout << "Enter your choice: ";
+        choice = cinInt();
+
+        while (choice > 7 or choice < 1)
+        {
+            cout << endl;
+            cout << RED << "The number you enter has to be between 1 and 7! Please, try again: " << RESET;
+            choice = cinInt();
+        }
+
+        system("cls");
+
+        switch (choice)
+        {
+        case 1:
+            displayBirds(birds, birdIndex);
+            cont = returnBack();
+            break;
+        case 2:
+            enterBird(birds, birdIndex);
+            cont = returnBack();
+            break;
+        case 3:
+            deleteBird(birds, birdIndex);
+            cont = returnBack();
+            break;
+        case 4:
+            editBird(birds, birdIndex);
+            cont = returnBack();
+            break;
+        case 5:
+            int option;
+
+            cout << "How would you like to filter the birds?" << endl << endl;
+            cout << "1. By species" << endl;
+            cout << "2. By age" << endl;
+            cout << "3. By sex" << endl;
+            cout << "4. By condition" << endl<<endl;
+            cout << "Enter your choice: ";
+            option = cinInt();
+
+            while (option > 4 or option < 1)
+            {
+                cout << endl;
+                cout << RED << "The number you enter has to be between 1 and 4! Please, try again: " << RESET;
+                option = cinInt();
+            }
+
+            system("cls");
+
+            if (option == 1)
+                filterBirdsBySpecies(birds, birdIndex);
+            else if (option == 2)
+                filterBirdsByAge(birds, birdIndex);
+            else if (option == 3)
+                filterBirdsBySex(birds, birdIndex);
+            else
+                filterBirdsByCondition(birds, birdIndex);
+
+            cont = returnBack();
+            break;
+
+        case 6:
+            cout << "How would you like to sort the birds?" << endl << endl;
+            cout << "1. By species" << endl;
+            cout << "2. By age" << endl;
+            cout << "3. By sex" << endl;
+            cout << "4. By condition" << endl << endl;
+            cout << "Enter your choice: ";
+            option = cinInt();
+
+            while (option > 4 or option < 1)
+            {
+                cout << endl;
+                cout << RED << "The number you enter has to be between 1 and 4! Please, try again: " << RESET;
+                option = cinInt();
+            }
+
+            system("cls");
+
+            if (option == 1)
+                sortBirdsBySpecies(birds, birdIndex);
+            else if (option == 2)
+                sortBirdsByAge(birds, birdIndex);
+            else if (option == 3)
+                sortBirdsBySex(birds, birdIndex);
+            else
+                sortBirdsByCondition(birds, birdIndex);
+
+            cont = returnBack();
+            break;
+        case 7:
+            cont = false;
+            break;
+        }
+    }
+}
 
 
 void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int& speciesIndex)
@@ -494,7 +656,7 @@ void displayMainMenu(BIRD* birds, int& birdIndex, BIRD_SPECIES* birdSpecies, int
         switch (choice)
         {
         case 1:
-            
+            displayBirdssMenu(birds, birdIndex, birdSpecies, speciesIndex);
             break;
         case 2:
            
@@ -513,11 +675,8 @@ int main()
     BIRD_SPECIES* birdSpecies = new BIRD_SPECIES[100];
     int birdIndex = 0, speciesIndex = 0;
 
-    displayMainMenu(birds, birdIndex, birdSpecies, speciesIndex);
-
-   /* initBirds(birds, birdIndex);
+    initBirds(birds, birdIndex);
     initBirdSpecies(birds, birdSpecies, speciesIndex);
 
-    editBird(birds);
-    displayBird(birds, 15);*/
+    displayMainMenu(birds, birdIndex, birdSpecies, speciesIndex);
 }
